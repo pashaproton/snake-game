@@ -66,12 +66,29 @@ impl Config {
 }
 
 pub fn get_config() -> Config {
-    let width: u32 = 800;
-    let height: u32 = 600;
+    let config_data = tsu::toml_from_path("config.toml");
+    let config_data_window = config_data.get("window")
+        .expect("Should read from config_data property window");
+
+    let width = config_data_window.get("width")
+        .expect("Should read from config_data_window property width")
+        .as_integer()
+        .expect("Should return width as integer") as u32;
+
+    let height: u32 = config_data_window.get("height")
+        .expect("Should read from config_data_window property height")
+        .as_integer()
+        .expect("Should return height as integer") as u32;
     
     let window = ConfigWindow::new(width, height);
 
-    let size: i8 = 4;
+    let config_data_snake = config_data.get("snake")
+        .expect("Should read from config_data property snake");
+
+    let size = config_data_snake.get("size")
+        .expect("Should read from config_data_snake property size")
+        .as_integer()
+        .expect("Should return size as integer") as i8;
     let speed = 6;
     let position: (i32, i32) = (0, 0); // ((width / 2) as i32, (height / 2) as i32);
     let snake = ConfigSnake::new(size, speed, position);

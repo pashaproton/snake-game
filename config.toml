@@ -1,6 +1,6 @@
-[canvas]
-width = "640"
-height = "380"
+[window]
+width = 640
+height = 380
 
 [snake]
-size = "3"
+size = 3
