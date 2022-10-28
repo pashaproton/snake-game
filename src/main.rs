@@ -45,7 +45,7 @@ fn main() {
             game.render(&r);
         }
 
-        if let Some(_) = e.update_args() {
+        if e.update_args().is_some() {
             match game.update() {
                 Ok(behaviour) => {
                     if let SnakeBehaviour::Eat = behaviour {
