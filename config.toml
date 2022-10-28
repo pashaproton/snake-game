@@ -1,0 +1,6 @@
+[canvas]
+width = "640"
+height = "380"
+
+[snake]
+size = "3"

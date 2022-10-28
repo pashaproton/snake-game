@@ -1,0 +1,17 @@
+[package]
+name = "snake"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+console = "0.15.2"
+piston = "0.53.1"
+piston2d-graphics = "0.42.0"
+piston2d-opengl_graphics = "0.81.0"
+pistoncore-glutin_window = "0.70.1"
+rand = "0.8.5"
+serde_derive = "1.0.147"
+toml = "0.5.9"
+tsu = "1.0.1"
